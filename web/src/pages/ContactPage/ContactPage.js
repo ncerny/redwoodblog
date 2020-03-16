@@ -74,6 +74,10 @@ const ContactPage = (props) => {
           errorStyle={{ display: 'block', borderColor: 'red' }}
           validation={{
             required: true,
+            pattern: {
+              value: /[^@]+@[^\.]+\..+/,
+              message: 'Please enter a valid email address',
+            },
           }}
         />
         <FieldError name="email" style={{ color: 'red' }} />
